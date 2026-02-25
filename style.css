@@ -7,7 +7,7 @@
     url("./img/space_bg_QHD_2560x1440.png") 3x,
     url("./img/space_bg_4K_3840x2160.png") 4x
   );
-  background: #000000;
+  background:;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -30,6 +30,15 @@
   inset: 0;
 }
 
+.header {
+  min-height: 100vh; /* ocupa a tela toda (opcional) */
+  padding: 72px 24px 0; /* espaço no topo e laterais */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza horizontal */
+  justify-content: flex-start; /* cola no topo */
+  text-align: center;
+}
 html,
 body {
   margin: 0;
@@ -116,7 +125,7 @@ body {
   margin: 0.6rem 0 0;
   font-size: clamp(1.3rem, 2vw, 1.4rem);
   color: rgba(148, 196, 241, 0.85);
-  text-shadow: 0 0 10px rgba(0, 200, 255, 0.904);
+  text-shadow: 0 0 10px rgb(87, 215, 250);
 }
 .title {
   position: relative;
@@ -132,9 +141,9 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: -2px;
   width: 100%;
-  height: 2px; /* altura máxima no centro */
+  height: 1px; /* altura máxima no centro */
   border-radius: 999px;
   background: linear-gradient(
     90deg,
@@ -174,3 +183,5 @@ body {
     linear-gradient(90deg, #7fd6ff, #c18bff, #2e94a7);
   animation: move-glow 3s linear infinite;
 }
+
+/* ===== WORKS / PROJETOS ===== */
