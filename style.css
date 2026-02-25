@@ -7,6 +7,7 @@
     url("./img/space_bg_QHD_2560x1440.png") 3x,
     url("./img/space_bg_4K_3840x2160.png") 4x
   );
+  background: #000000;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -55,6 +56,8 @@ body {
 
 /* ===== TÍTULO NEON ===== */
 .title {
+  position: relative;
+  display: inline-block; /* faz a largura acompanhar o texto */
   font-size: clamp(2.6rem, 6vw, 5rem);
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -95,7 +98,6 @@ body {
     rgba(0, 200, 255, 0.18),
     transparent 70%
   );
-  filter: blur(18px);
   background: linear-gradient(90deg, #7d4394, #c18bff, #66e0ff, #fff);
   filter: blur(14px); /* blur mais macio */
   background: radial-gradient(
@@ -112,7 +114,63 @@ body {
 /* subtítulo */
 .sub {
   margin: 0.6rem 0 0;
-  font-size: clamp(1.4rem, 2vw, 1.4rem);
+  font-size: clamp(1.3rem, 2vw, 1.4rem);
   color: rgba(148, 196, 241, 0.85);
   text-shadow: 0 0 10px rgba(0, 200, 255, 0.904);
+}
+.title {
+  position: relative;
+  display: inline-block;
+}
+
+.title {
+  position: relative;
+  display: inline-block; /* faz a largura acompanhar o texto */
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px; /* altura máxima no centro */
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #a878e7d2,
+    #a878e7d2,
+    #4f8e9eea,
+    #4fccebea,
+    #4fcceb9c
+  );
+
+  /* máscara que afina nas pontas */
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+
+  box-shadow:
+    0 0 10px rgba(102, 224, 255, 0.7),
+    0 0 22px rgba(193, 139, 255, 0.5);
+  background:
+    radial-gradient(
+      30px 7px at var(--x, 30%) 50%,
+      rgba(255, 255, 255, 0.9),
+      rgba(102, 224, 255, 0.7) 40%,
+      transparent 70%
+    ),
+    linear-gradient(90deg, #7fd6ff, #c18bff, #2e94a7);
+  animation: move-glow 3s linear infinite;
 }
