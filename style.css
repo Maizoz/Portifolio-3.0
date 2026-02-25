@@ -1,0 +1,38 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-image: image-set(
+    url("./img/space_bg_HD_1280x720.png") 1x,
+    url("./img/space_bg_FHD_1920x1080.png") 2x,
+    url("./img/space_bg_QHD_2560x1440.png") 3x,
+    url("./img/space_bg_4K_3840x2160.png") 4x
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Mobile: troca para versoes portrait */
+@media (max-width: 768px) {
+  .hero {
+    background-image: image-set(
+      url("./img/space_bg_HD_portrait_720x1280.png") 1x,
+      url("./img/space_bg_FHD_portrait_1080x1920.png") 2x,
+      url("./img/space_bg_4K_portrait_2160x3840.png") 3x
+    );
+    background-position: center top;
+  }
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65));
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
